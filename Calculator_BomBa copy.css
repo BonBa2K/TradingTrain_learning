@@ -1,0 +1,61 @@
+body
+{
+    background: rgb(0, 0, 0);
+}
+.container{
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    margin: auto;
+}
+
+/*泛用class*/
+.button{
+    background: rgb(88, 88, 88);
+    color: white;
+    width: 25px;
+    height: 45px;
+    border: 1px solid black;
+    text-align: center;
+    cursor: pointer;
+    font-size: 32px;
+    font-weight: 100;
+    padding-top: 3px;
+    cursor: pointer;
+}
+.operator{
+    background: rgb(110, 110, 110);
+    color: white;
+}
+
+.row{
+    display: table;
+    width: 100%;
+}
+.column{
+    display: table-cell;
+}
+
+/*id 部分*/
+#display-val{
+    height: 80px;
+    color: white;
+    text-align: right;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    font-size: 48px;
+    background: #383838;
+    overflow: hidden;  /* 數字輸入太多時不要超過欄位 */
+    white-space: nowrap; /*數字輸入太多時不要換行*/
+    padding: 12px; /*結果欄位的數字跟欄位的padding*/
+    border-radius: 7px 7px 0 0;/*左右上角導圓角*/
+}
+
+/* 左右下腳導圓角 */
+#plus{
+    border-radius: 0 0 7px 0;
+}
+#zero{
+    border-radius: 0 0 0 7px;
+}

@@ -1,0 +1,64 @@
+body
+{
+    background:black;
+}
+/*結果輸出*/
+.output_back{
+    height: 80px;
+    width: min(96%,498px);
+    background-color: black;
+    border-style:solid;
+    border-width:1px;
+    border-color: rgb(255, 255, 255);
+    border-radius: 7px 7px 7px 7px;/*左右上角導圓角*/
+}
+#output{
+    height: 80px;
+    color: white;
+    text-align: right;
+    font-size: 48px;
+    overflow: hidden;  /* 數字輸入太多時不要超過欄位 */
+    white-space: nowrap; /*數字輸入太多時不要換行*/
+    padding: 12px; /*結果欄位的數字跟欄位的padding*/
+}
+/*按鍵列排版*/
+.row{
+    margin-top: 4px;
+}
+/*按鈕背景*/
+.button_back{
+    display:inline-table;
+    color: white;
+    height: 45px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 32px;
+    font-weight: 100;
+    margin: auto;
+    border-style:solid;
+    border-width:1px;
+    border-color: black;
+    border-radius: 7px 7px 7px 7px;/*左右上角導圓角*/
+}
+/*上排長按鈕*/
+.up{
+    width: calc(48% - 2px);
+    max-width: 246px;
+}
+/*下排短按鈕*/
+.down{
+    width: calc(24% - 4px);
+    max-width: 120px;
+}
+/*數字鍵深色*/
+.num{
+    background-color: rgb(100,100,100);
+}
+/*符號淺色*/
+.operator{
+    background-color: rgb(150,150,150);
+}
+#equal{
+    background-color: rgb(7, 184, 194);
+    color: black;
+}

@@ -1,0 +1,32 @@
+.flex_container {
+    display:flex;
+    flex-flow:row wrap;
+    border:solid 5px rgb(216, 30, 30);
+    height:1350px;
+    margin:2%;
+}
+.font {
+    color:#fff;
+    text-align:center;
+    font-size:50px;
+}
+.box {
+    background-color:rgb(124, 185, 25);
+    margin:0.5%;
+    width:275px;
+}
+.box_normal {
+    align-self:center;
+    height:200px;
+    line-height:200px;
+}
+.box_short {
+    align-self:flex-end;
+	height:100px;
+    line-height:100px;
+}
+.box_long {
+    align-self:flex-start;
+    height:300px;
+    line-height:300px;
+}
