@@ -8,14 +8,17 @@
     <title>計算機</title>
 </head>
 
-<body>
+<body onmousemove="MoveOutput(event)">
+    <!-- <div>event.clientX: <span id="c_p_x"></span>.</div>
+    <div>origin_x: <span id="c_p_y"></span>.</div>
+    <div>boxElement.offsetLeft: <span id="c_p_z"></span>.</div> -->
     <div class="container">
-        <div class="output_back">
+        <div class="output_back" onmousemove="MoveOutput(event)" onmousedown="mouseDown()" onmouseup="mouseUp()">
             <div class="column" id="output">0</div>
         </div>
         <div class="row">
-            <div class="button_back up operator" id="backspace">⇤</div>
-            <div class="button_back up operator" id="clear">AC</div>
+            <div class="button_back up" id="backspace">⇤</div>
+            <div class="button_back up" id="clear">AC</div>
         </div>
         <div class="row">
             <div class="button_back down num" id="seven">7</div>
@@ -40,7 +43,7 @@
 
         <div class="row">
             <div class="button_back down num" id="zero">0</div>
-            <div class="button_back down num" id="decimal">.</div>
+            <div class="button_back down" id="point">.</div>
             <div class="button_back down operator" id="equal">=</div>
             <div class="button_back down operator" id="plus">+</div>
         </div>

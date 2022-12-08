@@ -1,23 +1,25 @@
 body
 {
-    background:black;
+    background:rgb(0, 0, 0);
 }
 /*結果輸出*/
 .output_back{
     height: 80px;
     width: min(96%,498px);
     background-color: black;
+    overflow: hidden;  /* 數字輸入太多時不要超過欄位 */
     border-style:solid;
     border-width:1px;
     border-color: rgb(255, 255, 255);
     border-radius: 7px 7px 7px 7px;/*左右上角導圓角*/
 }
 #output{
+    position: relative;
+    left: 0px;
     height: 80px;
     color: white;
     text-align: right;
     font-size: 48px;
-    overflow: hidden;  /* 數字輸入太多時不要超過欄位 */
     white-space: nowrap; /*數字輸入太多時不要換行*/
     padding: 12px; /*結果欄位的數字跟欄位的padding*/
 }
@@ -40,6 +42,11 @@ body
     border-color: black;
     border-radius: 7px 7px 7px 7px;/*左右上角導圓角*/
 }
+/*按鈕變色*/
+.button_back:hover
+{
+    background-color: rgb(50,50,50);
+}
 /*上排長按鈕*/
 .up{
     width: calc(48% - 2px);
@@ -51,14 +58,20 @@ body
     max-width: 120px;
 }
 /*數字鍵深色*/
-.num{
+.num, #point{
     background-color: rgb(100,100,100);
 }
 /*符號淺色*/
-.operator{
+.operator ,#backspace,#clear{
     background-color: rgb(150,150,150);
 }
 #equal{
     background-color: rgb(7, 184, 194);
+    color: black;
+}
+/*按鈕變色*/
+#equal:hover
+{
+    background-color: rgb(7, 120, 124);
     color: black;
 }
