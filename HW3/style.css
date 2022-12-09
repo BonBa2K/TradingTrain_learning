@@ -1,0 +1,39 @@
+html,
+body {
+    height: 100%;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: aqua;
+    padding: 2px;
+    border-bottom: 1px solid;
+}
+
+
+thead tr {
+    background-color: rgb(200, 200, 200);
+}
+
+table {
+    width: 100%;
+    border-color: black;
+    border-spacing: 0px
+}
+
+th,
+td {
+    height: 30px;
+    border-color: black;
+    text-align: center;
+    border-bottom: 1px solid;
+}
+
+td {
+    background-color: white;
+}
+
+.input_field {
+    text-align: center;
+    margin-top: 10px;
+}
