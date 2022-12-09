@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>永和洪金寶的自我介紹</title>
-        <link rel="stylesheet" href="./style.css">
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale = 1.0">
-    </head>
+<head>
+    <title>會員管理後台</title>
+    <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+</head>
 
-    <body>
-        <div class="container">
-            <header class="header">
-                <h1>會員管理後台</h1>
-            </header>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>會員管理後台</h1>
+        </header>
 
-            <div class="tableContainer">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>姓名</th>
-                            <th>信箱</th>
-                            <th>電話</th>
-                            <th>加入日期</th>
-                            <th>操作</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tbody">
-                        <tr>
-                            <td>杜伊凱</td>
-                            <td>123@gmail.com</td>
-                            <td>0900000000</td>
-                            <td>2022-12-09T08:16:53.017Z</td>
-                            <td>
-                                <button>修改</button>
-                                <button class="deleteButton">刪除</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="input_field">
-                <input type="text" placeholder="姓名" id="name"/>
-                <input type="text" placeholder="email" id="email"/>
-                <input type="text" placeholder="電話" id="phone"/>
-                <button id="addButton">新增</button>
-            </div>
+        <div class="tableContainer">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>姓名</th>
+                        <th>信箱</th>
+                        <th>電話</th>
+                        <th>加入日期</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    <tr>
+                        <td>杜伊凱</td>
+                        <td>123@gmail.com</td>
+                        <td>0900000000</td>
+                        <td>2022-12-09T08:16:53.017Z</td>
+                        <td>
+                            <button>修改</button>
+                            <button class="deleteButton">刪除</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <script src="./index.js"></script>
-    </body>
+        <div class="input_field">
+            <input type="text" placeholder="姓名" id="name" />
+            <input type="text" placeholder="email" id="email" />
+            <input type="text" placeholder="電話" id="phone" />
+            <button id="addButton">新增</button>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
 
 </html>
