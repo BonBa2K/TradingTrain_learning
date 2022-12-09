@@ -8,17 +8,22 @@ body {
     background-color: aqua;
     padding: 2px;
     border-bottom: 1px solid;
+    overflow:hidden;
+    white-space:nowrap;
 }
 
 
 thead tr {
     background-color: rgb(200, 200, 200);
+    width: 20%;
 }
 
 table {
+    table-layout: fixed;
     width: 100%;
+    overflow: hidden;
     border-color: black;
-    border-spacing: 0px
+    border-spacing: 0px;
 }
 
 th,
@@ -27,6 +32,9 @@ td {
     border-color: black;
     text-align: center;
     border-bottom: 1px solid;
+    border-right: 1px solid;
+    overflow:hidden;
+    white-space:nowrap;
 }
 
 td {
@@ -36,4 +44,7 @@ td {
 .input_field {
     text-align: center;
     margin-top: 10px;
+}
+input{
+    width: 20%;
 }
