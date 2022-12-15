@@ -30,6 +30,7 @@ AddNewRow = () => {
     tr.children[4].children[1].addEventListener('click', function () {
         tr.remove();
     });
+    /*用id */
 
     /*clear value*/
     name_El.value = "";
