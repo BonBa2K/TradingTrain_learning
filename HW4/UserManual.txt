@@ -1,0 +1,25 @@
+Step 1.要先啟動虛擬環境：
+    Windows 系統用：
+    python3 -m venv tutorial-env
+    JOJO-env\Scripts\activate.bat
+
+    Unix 或 MacOS 系統用：
+    python3 -m venv tutorial-env
+    source JOJO-env/bin/activate
+
+    顯示虛擬環境中所有已經安裝的套件：
+    python -m pip list
+
+    要停用虛擬環境，要用：
+    deactivate
+    
+Step 2.下載需要的package：
+    pip install -r requirements.txt
+
+Step 3.要執行爬蟲可以用：
+    cd PCHome_Crawler.py 所在的資料夾
+    python PCHome_Crawler.py
+
+Step 4.要執行FastAPI可以用：
+    cd main.py 所在的資料夾
+    uvicorn main:app --reload
