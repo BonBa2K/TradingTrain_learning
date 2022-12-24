@@ -3,3 +3,4 @@ uvicorn
 selenium
 pymongo
 pydantic
+requests

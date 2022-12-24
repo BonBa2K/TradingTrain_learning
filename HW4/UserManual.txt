@@ -1,7 +1,7 @@
 Step 1.要先啟動虛擬環境：
     Windows 系統用：
-    python3 -m venv tutorial-env
-    JOJO-env\Scripts\activate.bat
+    python3 -m venv JOJO-env
+    TradingTrain_learning/HW4/JOJO-env/Scripts/Activate.ps1
 
     Unix 或 MacOS 系統用：
     python3 -m venv tutorial-env
