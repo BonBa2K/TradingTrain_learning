@@ -1,7 +1,9 @@
 import requests
 import datetime
 import pymongo
+import logging
 
+logging.basicConfig(filename="report.log", encoding="utf-8", level=logging.DEBUG)
 # initialize header
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
@@ -21,16 +23,21 @@ def search_prods(search_word, search_amount):
         temp = requests.get(url)
         products = temp.json()
         for prod in products["prods"]:
-            now = datetime.datetime.now()
-            created_at = now.strftime("%Y-%m-%dT%H:%M:%SZ")
-            output.append(
-                {
-                    "prod_name": prod["name"],
-                    "prod_price": prod["price"],
-                    "channel": "PChome",
-                    "created_at": created_at,
-                }
-            )
+            try:
+                now = datetime.datetime.now()
+                created_at = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+                output.append(
+                    {
+                        "prod_name": prod["name"],
+                        "prod_price": prod["price"],
+                        "channel": "PChome",
+                        "created_at": created_at,
+                    }
+                )
+                logging.debug("append successed")
+            except:
+                logging.debug("append failed")
+
         loop_round += 1
         if len(output) >= search_amount:
             loop_round = 1
