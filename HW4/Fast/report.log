@@ -1,0 +1,75 @@
+INFO:root:==== 查詢關鍵字:電視, 查詢數量:302 ====
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=1&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=2&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=3&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=4&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=5&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=6&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=7&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=8&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=9&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=10&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=11&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=12&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=13&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=14&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=15&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=16&sort=sale/dc HTTP/1.1" 200 None
+INFO:root:append success
+INFO:root:==== 資料爬取完成 ====
+INFO:root:==== 查詢關鍵字:電視, 查詢數量:302 ====
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=1&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=2&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=3&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=4&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=5&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=6&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=7&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=8&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=9&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=10&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=11&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=12&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=13&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=14&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=15&sort=sale/dc HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%9B%BB%E8%A6%96&page=16&sort=sale/dc HTTP/1.1" 200 None
+INFO:root:append success
+INFO:root:==== 資料爬取完成 ====
+INFO:root:==== 查詢關鍵字:鐵獸式強襲機動兵裝改, 查詢數量:302 ====
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): ecshweb.pchome.com.tw:443
+DEBUG:urllib3.connectionpool:https://ecshweb.pchome.com.tw:443 "GET /search/v3.3/all/results?q=%E9%90%B5%E7%8D%B8%E5%BC%8F%E5%BC%B7%E8%A5%B2%E6%A9%9F%E5%8B%95%E5%85%B5%E8%A3%9D%E6%94%B9&page=1&sort=sale/dc HTTP/1.1" 200 None
+INFO:root:關鍵字: 鐵獸式強襲機動兵裝改 資料量不足302
+INFO:root:==== 資料爬取完成 ====

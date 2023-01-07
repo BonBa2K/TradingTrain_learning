@@ -3,30 +3,32 @@ import datetime
 import pymongo
 import logging
 
+# initialization
 logging.basicConfig(filename="report.log", encoding="utf-8", level=logging.DEBUG)
-# initialize header
+target_db = pymongo.MongoClient("mongodb://localhost:27017/")
+collection = target_db["demoDB"]["prods"]
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
 }
 
-# parse url & data get function
-def parse_url(keyword, page):
-    url = f"https://ecshweb.pchome.com.tw/search/v3.3/all/results?q={keyword}&page={str(page)}&sort=sale/dc"
-    return url
-
-
-def search_prods(search_word, search_amount):
-    output = []
+# data get function
+def search_pc_prods(search_word, search_amount):
     loop_round = 1
+    inserted_amount= 0
     while True:
-        url = parse_url(keyword=search_word, page=loop_round)
-        temp = requests.get(url)
-        products = temp.json()
+        url = f"https://ecshweb.pchome.com.tw/search/v3.3/all/results?q={search_word}&page={str(loop_round)}&sort=sale/dc"
+        products = requests.get(url).json()
         for prod in products["prods"]:
             try:
+                # check if pords enough
+                if inserted_amount >= search_amount:
+                    logging.info(f'append success')
+                    # return output
+                    return 0
+
                 now = datetime.datetime.now()
                 created_at = now.strftime("%Y-%m-%dT%H:%M:%SZ")
-                output.append(
+                collection.insert_one(                    
                     {
                         "prod_name": prod["name"],
                         "prod_price": prod["price"],
@@ -34,25 +36,25 @@ def search_prods(search_word, search_amount):
                         "created_at": created_at,
                     }
                 )
-                logging.debug("append successed")
+                inserted_amount+=1
+
             except:
-                logging.debug("append failed")
+                logging.error(f'append failed ,inserted_amount == {str(inserted_amount)}')
+                break
 
-        loop_round += 1
-        if len(output) >= search_amount:
-            loop_round = 1
+        #如果資料量不足就跳出去
+        if products["totalRows"] < search_amount:
+            logging.info(f'關鍵字: {search_word} 資料量不足{search_amount}')
             break
-    return output
 
+        loop_round+=1
 
-result = search_prods(search_word="電視", search_amount=300)
-
-# --------------------存檔區-------------------------
-# Writing to MongoDB
-target_db = pymongo.MongoClient("mongodb://localhost:27017/")
-collection = target_db["demoDB"]["prods"]
-
-z = collection.delete_many({})
-x = collection.insert_many(result)
-
-print(z.deleted_count, "個舊檔案已刪除")
+if __name__=='__main__':
+    collection.delete_many({})
+    input_word="鐵獸式強襲機動兵裝改"
+    # input_word="電視"
+    input_num=302
+    
+    logging.info(f'==== 查詢關鍵字:{input_word}, 查詢數量:{input_num} ====')
+    search_pc_prods(search_word=input_word, search_amount=input_num)
+    logging.info(f'==== 資料爬取完成 ====')

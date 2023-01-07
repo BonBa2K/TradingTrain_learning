@@ -1,5 +1,4 @@
 def pord_serializer(pord) -> dict:
-
     return {
         "_id": str(pord["_id"]),
         "prod_name": pord["prod_name"],
@@ -7,8 +6,6 @@ def pord_serializer(pord) -> dict:
         "channel": pord["channel"],
         "created_at": pord["created_at"]
     }
-    
-
 
 def pords_serializer(pords) -> list:
     Output = []
