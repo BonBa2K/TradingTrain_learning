@@ -1,30 +1,49 @@
 from config.database import collection
 from bson import ObjectId
-from schemas.pords_schema import pords_serializer
+
+def Output_serializer(prods):
+    Output = []
+    for prod in prods:
+        Output.append({
+        "_id": str(prod["_id"]),
+        "prod_name": prod["prod_name"],
+        "prod_price": prod["prod_price"],
+        "channel": prod["channel"],
+        "created_at": prod["created_at"]
+        })
+    return Output
+    
+def get_prods_parse():
+    prods=collection.find()
+    return Output_serializer(prods)
 
 
-def get_pords_parse():
-    return pords_serializer(collection.find())
+def get_prods_parse_id(id_in):
+    prods=collection.find({"_id": ObjectId(id_in)})
+    return Output_serializer(prods)
 
 
-def get_pords_parse_id(id_in):
-    return pords_serializer(collection.find({"_id": ObjectId(id_in)}))
+
+def get_prods_parse_name(prod_name):
+    prods=collection.find({"prod_name": {"$regex": prod_name}})
+    return Output_serializer(prods)
 
 
-def get_pords_parse_name(prod_name):
-    return pords_serializer(collection.find({"prod_name": {"$regex": prod_name}}))
+def post_prods_parse(prod):
+    _id = collection.insert_one(dict(prod))
+    prods=collection.find({"_id": _id.inserted_id})
+    return Output_serializer(prods)
 
 
-def post_pords_parse(pord):
-    _id = collection.insert_one(dict(pord))
-    return pords_serializer(collection.find({"_id": _id.inserted_id}))
+def put_prods_parse(id_in, prod):
+    collection.find_one_and_update({"_id": ObjectId(id_in)}, {"$set": dict(prod)})
+    prods=collection.find({"_id": ObjectId(id_in)})
+    return Output_serializer(prods)
 
 
-def put_pords_parse(id_in, pord):
-    collection.find_one_and_update({"_id": ObjectId(id_in)}, {"$set": dict(pord)})
-    return pords_serializer(collection.find({"_id": ObjectId(id_in)}))
-
-
-def delete_pords_parse(id_in):
-    collection.find_one_and_delete({"_id": ObjectId(id_in)})
-    return {"status": "deleted"}
+def delete_prods_parse(id_in):
+    try:
+        collection.find_one_and_delete({"_id": ObjectId(id_in)})
+        return {"status": "deleted"}
+    except:
+        return {"status": "delete fail"}

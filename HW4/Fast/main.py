@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routes.routes import pord_api_router
+from routes.prods_CRUD import prod_api_router
 
 tags_metadata = [
     {
@@ -14,4 +14,4 @@ tags_metadata = [
 
 app = FastAPI(openapi_tags=tags_metadata)
 
-app.include_router(pord_api_router)
+app.include_router(prod_api_router)
