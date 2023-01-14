@@ -13,7 +13,6 @@ headers = {
 
 # data get function
 def search_pc_prods(search_word, search_amount):
-    output=[]
     loop_round = 1
     inserted_amount= 0
     while True:
@@ -24,11 +23,12 @@ def search_pc_prods(search_word, search_amount):
                 # check if pords enough
                 if inserted_amount >= search_amount:
                     logging.info(f'append success')
-                    return output
+                    # return output
+                    return 0
 
                 now = datetime.datetime.now()
                 created_at = now.strftime("%Y-%m-%dT%H:%M:%SZ")
-                output.append(
+                collection.insert_one(                    
                     {
                         "prod_name": prod["name"],
                         "prod_price": prod["price"],
@@ -51,10 +51,10 @@ def search_pc_prods(search_word, search_amount):
 
 if __name__=='__main__':
     collection.delete_many({})
-    # input_word="鐵獸式強襲機動兵裝改"
-    input_word="電視"
+    input_word="鐵獸式強襲機動兵裝改"
+    # input_word="電視"
     input_num=302
     
     logging.info(f'==== 查詢關鍵字:{input_word}, 查詢數量:{input_num} ====')
-    collection.insert_many(search_pc_prods(search_word=input_word, search_amount=input_num))
+    search_pc_prods(search_word=input_word, search_amount=input_num)
     logging.info(f'==== 資料爬取完成 ====')

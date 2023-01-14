@@ -1,0 +1,148 @@
+const serviceworkerversion = "0.002";
+const firebaseConfig  = {
+    apiKey: "AIzaSyCdxBZAUqSmiRxqka09UUZrcDuX1_CJCLI",
+    authDomain: "udn-rr.firebaseapp.com",
+    databaseURL: "https://udn-rr.firebaseio.com",
+    projectId: "udn-rr",
+    storageBucket: "udn-rr.appspot.com",
+    messagingSenderId: "33513782153",
+    appId: "1:33513782153:web:21ab2c476aad7ee34a7f58"
+ };
+  
+firebase.initializeApp( firebaseConfig  );
+const messaging=firebase.messaging();
+messaging.usePublicVapidKey('BG5BAFrCX49CNHN6h7ifMSdALz-Ti_jsp25tvii5BDy5cJokq2Y7Uw4qhAffRbDO-5LD9Zeslod65OKAsvx_VfE');
+
+var local_registration;
+ if ('serviceWorker' in navigator) {
+	window.addEventListener('load', function() {
+		// request permission
+		
+		let requestpremission = Notification.requestPermission()
+		.then(function(permission) {
+		   if (permission === 'granted') {	
+				console.log('Notification permission granted.',permission);
+				return true;				
+		   }else{
+			   removeSentTokenStorage();
+			   return false;	
+		   }	   
+		 }).catch(function(err) {
+				console.log('Unable to get permission to notify.', err);
+				removeSentTokenStorage();
+			
+			return false;
+		 });
+		//console.log( requestpremission );
+		
+		requestpremission.then(function(permission){
+			//console.log( permission );
+			if(! permission) return;
+			navigator.serviceWorker.register('/static/js/firebase-messaging-sw.js?v='+serviceworkerversion).then(function(registration) {
+				console.log( registration );
+				registration.addEventListener('updatefound', function() {
+				// If updatefound is fired, it means that there's
+				// a new service worker being installed.
+				var installingWorker = registration.installing;
+					console.log('A new service worker is being installed:', installingWorker);
+				});   
+		   
+			console.log('ServiceWorker registration successful with scope: ', registration.scope);
+			local_registration = registration;
+			messaging.useServiceWorker(registration);
+			//try_to_get_token();
+			if (!isTokenSentToServer()) {	getToken();  	}
+		});
+		
+	  
+	   }).catch(function(err) {
+		//registration failed :(
+		console.log('ServiceWorker registration failed: ', err);
+	   });
+	});
+ }
+
+
+
+  // Handle incoming messages. Called when:
+  // - a message is received while the app has focus
+  // - the user clicks on an app notification created by a service worker
+  //   `messaging.setBackgroundMessageHandler` handler.
+  messaging.onMessage(function(payload) {	
+    console.log('FCM Message received. ', payload);    
+    // Update the UI to include the received message.
+	local_registration.active.postMessage(payload);
+  });
+
+
+  function showToken(currentToken) {
+	console.log(currentToken);
+  }
+  
+  function getToken(){
+		messaging.getToken().then(function(refreshedToken) {		 
+		  // Send Instance ID token to app server.
+		  sendTokenToServer(refreshedToken);
+		}).catch(function(err) {
+		  console.log('Unable to retrieve refreshed token ', err);
+		  showToken('Unable to retrieve refreshed token ', err);
+		});  
+  }	  
+  
+  // Send the Instance ID token your application server, so that it can:
+  // - send messages back to this app
+  // - subscribe/unsubscribe the token from topics
+  function sendTokenToServer(currentToken) {
+    if (!isTokenSentToServer()) {
+    
+	  var data = { 	token:currentToken,
+					account: getCookie("udnmember")		  		  
+					};
+      // TODO(developer): Send the current token to your server.
+	  //console.log( isTokenNeedReSend() );
+	  if( isTokenNeedReSend() ){
+		data.update = true; 
+		//console.log( 'FCM isTokenNeedReSend' );
+		if( data.account === undefined || data.account.length == 0 ){
+			//沒有登入
+			return;
+		}	
+	  }
+		console.log('Sending token to server...');
+	  fetch("https://fcm.udn.com/fcm/fetch/"+firebaseConfig['projectId'],{	method:"POST",
+														cache: 'no-cache',
+														mode: 'cors',
+														body:JSON.stringify(data)})	  
+	  //.then(data => console.log(data))
+	  .catch(error => console.error(error));	
+	  //console.log( "FCM DATA ACCOUNT:"+ data.account.length,data.account );
+	  if( data.account === undefined || data.account.length == 0 ){
+		setTokenSentToServer('2');  
+	  }else	{  
+		setTokenSentToServer('1');
+	  }
+    } else {
+      console.log('Token already sent to server so won\'t send it again unless it changes');
+    }
+  }
+  function isTokenNeedReSend(){
+	return window.localStorage.getItem('sentToServer') === '2';
+  }	  
+  
+  function isTokenSentToServer() {
+    return window.localStorage.getItem('sentToServer') === '1';
+  }
+  //0 not sent 1 sent 2 need account
+  function setTokenSentToServer(sent) {
+    window.localStorage.setItem('sentToServer', sent);
+  }
+  
+  function removeSentTokenStorage(){
+	window.localStorage.removeItem('sentToServer');		  
+  }	  
+  
+  
+
+  
+  
+  
