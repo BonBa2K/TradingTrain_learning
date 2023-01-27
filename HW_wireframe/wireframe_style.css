@@ -1,37 +1,56 @@
 :root {
     --main-width: 1280px;
     --all-margin-top: 48px;
+    --menu_1-display: flex;
+    --menu_2-display: none;
+    --logo-width: 15%;
+    --subscribe-width: 25%;
     --S1-mid-width: 50%;
     --S1-flex-flow: row nowrap;
     --S1-height: 651px;
     --S1-mid-height: 100%;
     --S1-right-height: 100%;
     --S1-right-width: 25%;
+    --S1-right-editor-width: 100%;
+    --S1-right-editor-height: 30%;
+    --S1-right-other-display: flex;
+    --S1-right-other-width: 100%;
+    --S1-right-other-height: 70%;
+    --S1-right-newspaper-display: none;
+    --S1-right-editor-newspaper-display: none;
     --S1-mid-top-height: 65%;
+    --S1-left-display: flex;
     --S2-graphic-width: 75%;
     --S2-graphic_news-height: 355px;
     --S3-display: flex;
     --S5-height: 256px;
     --S5-comment-width: 25%;
+    --S5-comment-height: 120px;
+    --S6-text-display: block;
+    --S6-image-width: 40%;
+    --S6-image-margin-top: -50px;
+    --S7-height: 545px;
     --S7-flex-flow: row nowrap;
     --S7-title-width: 15%;
     --S7-title-height: 100%;
-    --S7-height: 545px;
     --S7-supplement-height: 519px;
     --S7-supplement-width: 42.5%;
+    --S8-height: 1053px;
+    --S8-newest-width: 50%;
+    --S8-newest-height: 180px;
     --S9-pod-width: 25%;
     --S9-pod-height: 400px;
+
 }
 
 @media screen and (max-width:1279px) and (min-width:1024px) {
     :root {
         --main-width: 992px;
-        --S1-mid-width: 75%
+        --S1-mid-width: 75%;
+        --S1-left-display: none;
     }
 
-    .S1 .left {
-        display: none;
-    }
+
 }
 
 @media screen and (max-width:1023px) and (min-width:768px) {
@@ -42,12 +61,16 @@
         --S1-height: 845px;
         --S1-mid-height: 58%;
         --S1-right-height: 42%;
-        --S1-right-width: 100%;
+        --S1-right-width: 552px;
         --S1-mid-top-height: 100%;
+        --S1-right-newspaper-display: block;
+        --S1-right-other-display: none;
+        --S1-left-display: none;
         --S2-graphic-width: 100%;
         --S3-display: none;
         --S5-height: 330px;
         --S5-comment-width: 50%;
+        --S5-comment-height: 120px;
         --S7-title-width: 100%;
         --S7-title-height: 53px;
         --S7-flex-flow: row wrap;
@@ -58,11 +81,16 @@
         --S9-pod-height: 628px;
     }
 
-    .S1 .left,
     .S1 .mid .cover_mid_bottom,
     .S2:before,
     .S2 .newspaper {
         display: none;
+    }
+
+    .cover_right_newspaper {
+        background-color: rgb(27, 60, 193);
+        width: 184px;
+        height: 354.9px;
     }
 
     .S7_title {
@@ -74,29 +102,46 @@
 @media screen and (max-width:767px) {
     :root {
         max-width: 100%;
+        --menu_1-display: none;
+        --menu_2-display: flex;
+        --logo-width: 70%;
+        --subscribe-width: 30%;
+        --all-margin-top: 0px;
         --S1-mid-width: 100%;
         --S1-flex-flow: row wrap;
-        --S1-height: 1204px;
-        --S1-mid-height: 40%;
-        --S1-right-height: 60%;
+        --S1-height: 1233px;
+        --S1-right-height: 70%;
         --S1-right-width: 100%;
+        --S1-right-editor-width: 75%;
+        --S1-right-editor-height: 35%;
+        --S1-right-editor-newspaper-display: block;
+        --S1-right-other-display: none;
+        --S1-mid-height: 30%;
         --S1-mid-top-height: 100%;
+        --S1-left-display: none;
         --S2-graphic_news-height: 100%;
         --S2-graphic-width: 100%;
         --S3-display: none;
-        --S5-height: 330px;
-        --all-margin-top: 0px;
+        --S5-height: 560px;
+        --S5-comment-width: 100%;
+        --S5-comment-height: 117px;
+        --S6-text-display: none;
+        --S6-image-width: 95%;
+        --S6-image-margin-top: 0px;
+        --S7-height: 900px;
         --S7-title-width: 100%;
         --S7-title-height: 53px;
         --S7-flex-flow: row wrap;
-        --S7-height: 429px;
-        --S7-supplement-height: 307px;
-        --S7-supplement-width: 50%;
-        --S9-pod-width: 50%;
-        --S9-pod-height: 628px;
+        --S7-supplement-height: 378px;
+        --S7-supplement-width: 100%;
+        --S8-height: 1396px;
+        --S8-newest-width: 100%;
+        --S8-newest-height: 130px;
+        --S9-height: 2080px;
+        --S9-pod-height: 25%;
+        --S9-pod-width: 100%;
     }
 
-    .S1 .left,
     .S1 .mid .cover_mid_bottom,
     .S2:before,
     .S2 .newspaper,
@@ -104,8 +149,16 @@
         display: none;
     }
 
-    .S7_title {
+    .S6 .S7_title {
         margin-bottom: 0px;
+    }
+
+    .S6 .image {
+        margin-left: 16px;
+    }
+
+    .all_container {
+        display: contents;
     }
 }
 
@@ -125,10 +178,13 @@ body {
     /* background: var(--background-color); */
 }
 
-#promotion {
+.promotion {
     background-color: rgb(7, 235, 252);
     width: 100%;
     height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* all_header */
@@ -139,19 +195,37 @@ body {
     width: var(--main-width);
 }
 
+/* all_header */
+.all_container {
+
+    width: var(--main-width);
+    height: auto;
+}
+
+/* menu_2 */
+.menu_2 {
+    display: var(--menu_2-display);
+    background-color: rgb(154, 136, 114);
+    height: 100px;
+    width: var(--main-width);
+    justify-content: space-between;
+    align-items: center;
+}
+
 .all_header .logo {
-    background-color: rgb(252, 142, 7);
-    width: 15%;
+    width: var(--logo-width);
 }
 
 .all_header .menu {
-    background-color: rgb(154, 136, 114);
+    display: var(--menu_1-display);
     width: 60%;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .all_header .subscribe {
-    background-color: rgb(110, 72, 25);
-    width: 25%;
+    background-color: crimson;
+    width: var(--subscribe-width);
 }
 
 /* context-box__title */
@@ -164,9 +238,13 @@ body {
     height: 40px;
 }
 
+/* context-box__title white*/
+.white {
+    color: white;
+}
+
 /* Section 1 */
 .S1 {
-    background-color: rgb(53, 170, 38);
     width: var(--main-width);
     height: var(--S1-height);
     display: flex;
@@ -174,9 +252,38 @@ body {
 }
 
 .S1 .left {
-    background-color: rgb(187, 243, 180);
+    display: var(--S1-left-display);
+    flex-wrap: wrap;
+    flex-direction: column;
     width: 25%;
     height: 100%;
+}
+
+.S1 .left .cover_left_text {
+    width: 95%;
+    font-size: 40px;
+    font-weight: 900;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.S1 .cover_left_other_title,
+.cover_right_other_title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    width: 100%;
+    font-size: 25px;
+    font-weight: 900;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+    
 }
 
 .S1 .mid {
@@ -190,6 +297,21 @@ body {
     height: var(--S1-mid-top-height);
 }
 
+.S1 .mid .cover_mid_top_text {
+    width: 95%;
+    position: relative;
+    bottom: 30%;
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 1.15;
+    padding-left: 5%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
 .S1 .mid .cover_mid_bottom {
     background-color: rgb(72, 112, 66);
     width: 100%;
@@ -197,9 +319,41 @@ body {
 }
 
 .S1 .right {
-    background-color: rgb(36, 62, 32);
     width: var(--S1-right-width);
     height: var(--S1-right-height);
+}
+
+.S1 .cover_right_top {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: var(--S1-right-editor-height);
+}
+
+.S1 .cover_right_editor_News {
+    width: var(--S1-right-editor-width);
+    height: 100%;
+}
+
+.S1 .cover_right_editor_newspaper {
+    display: var(--S1-right-editor-newspaper-display);
+    background-color: rgb(27, 60, 193);
+    width: calc(100% - var(--S1-right-editor-width));
+    height: 100%;
+}
+
+.S1 .cover_right_other {
+    display: var(--S1-right-other-display);
+    flex-direction: column;
+    width: var(--S1-right-other-width);
+    height: var(--S1-right-other-height);
+}
+
+.S1 .cover_right_newspaper {
+    display: var(--S1-right-newspaper-display);
+    background-color: rgb(27, 60, 193);
+    width: 184px;
+    height: 354.9px;
 }
 
 /* Section 2 */
@@ -310,7 +464,7 @@ body {
 .S5 .comment {
     background-color: bisque;
     width: var(--S5-comment-width);
-    height: 120px;
+    height: var(--S5-comment-height);
     display: flex;
     flex-flow: row wrap;
     box-sizing: border-box;
@@ -345,6 +499,7 @@ body {
 }
 
 .S6 .text {
+    display: var(--S6-text-display);
     background-color: rgb(223, 72, 168);
     width: 60%;
     height: 375px;
@@ -355,12 +510,12 @@ body {
 
 .S6 .image {
     background-color: rgb(223, 72, 168);
-    width: 40%;
+    width: var(--S6-image-width);
     height: 375px;
     box-sizing: border-box;
     border-width: medium;
     border-style: dashed;
-    margin-top: -50px;
+    margin-top: var(--S6-image-margin-top);
 }
 
 /* Section 7 */
@@ -370,7 +525,7 @@ body {
     height: var(--S7-height);
     display: flex;
     flex-flow: var(--S7-flex-flow);
-    margin-top: var(--all-margin-top);
+    margin-top: 48px;
 }
 
 .S7_1:before {
@@ -398,6 +553,7 @@ body {
     padding-left: 0;
     width: var(--S7-title-width);
     height: var(--S7-title-height);
+    margin-bottom: 0;
 }
 
 .supplement {
@@ -414,7 +570,7 @@ body {
 /* Section 8 */
 .S8 {
     width: var(--main-width);
-    height: 1053px;
+    height: var(--S8-height);
     display: flex;
     flex-flow: row wrap;
     margin-top: var(--all-margin-top);
@@ -425,15 +581,15 @@ body {
     content: "";
     left: -10vw;
     width: 110vw;
-    height: 1053px;
+    height: var(--S8-height);
     position: absolute;
     z-index: -1;
 }
 
 .S8 .newest {
     background-color: rgb(223, 72, 168);
-    width: 50%;
-    height: 180px;
+    width: var(--S8-newest-width);
+    height: var(--S8-newest-height);
     box-sizing: border-box;
     border-width: medium;
     border-style: dashed;
@@ -442,7 +598,7 @@ body {
 /* Section 9 */
 .S9 {
     width: var(--main-width);
-    height: var(--S9-pod-height);
+    height: var(--S9-height);
     display: flex;
     flex-flow: row wrap;
     margin-top: var(--all-margin-top);
@@ -452,7 +608,7 @@ body {
 .S9 .pod {
     background-color: bisque;
     width: var(--S9-pod-width);
-    height: 278px;
+    height: var(--S9-pod-height);
     display: flex;
     flex-flow: row wrap;
     box-sizing: border-box;
