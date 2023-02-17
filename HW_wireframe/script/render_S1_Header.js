@@ -1,8 +1,8 @@
 // create promotion
-create_El_a_Img('promotion', promotionData, 'width:100% ;height:80px')
+update_El_a_Img('promotion', promotionData)
 
 // create logo
-create_El_a_Img('logo', logoData,'')
+update_El_a_Img('logo', logoData)
 
 // create menu
 const menu = document.getElementsByClassName('menu');
@@ -23,18 +23,18 @@ for (const item of menuList) {
 }
 
 // create cover_left
-create_El_a_Img('cover_left_image', coverLeftData, 'width:95% ;');
+update_El_a_Img('cover_left_image', coverLeftData);
 update_El_a('cover_left_text', coverLeftData)
 
 // update cover_left_other_title List
 update_other_titles('cover_left_other_title', coverLeftOtherTitleList);
 
 // create cover_mid_top
-create_El_a_Img('cover_mid_top_image', coverMidTopImageData, 'width:100% ;height:100%');
+update_El_a_Img('cover_mid_top_image', coverMidTopImageData);
 update_El_a('cover_mid_top_text', coverMidTopTextData)
 
 // create cover_mid_bottom
-create_El_a_Img('cover_mid_bottom_image', coverMidBottomData, 'width:100% ;');
+update_El_a_Img('cover_mid_bottom_image', coverMidBottomData);
 update_El_a('cover_mid_bottom_title', coverMidBottomData)
 update_El_a_text('cover_mid_bottom_text', coverMidBottomData)
 

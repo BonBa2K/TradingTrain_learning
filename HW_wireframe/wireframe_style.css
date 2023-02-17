@@ -209,6 +209,10 @@ body {
     justify-content: center;
 }
 
+.promotion img {
+    height: 100%;
+}
+
 /* all_header */
 .all_header {
     display: flex;
@@ -439,6 +443,21 @@ body {
 .S2 .graphic {
     width: var(--S2-graphic-width);
     height: 455px;
+}
+
+.S2 .graphic_news {
+    display: var(--S1-mid-bottom-display);
+    width: 100%;
+    height: 35%;
+}
+
+.S2 .graphic_news_container {
+    width: 57%;
+    height: 100%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .S2 .graphic .graphic_news {

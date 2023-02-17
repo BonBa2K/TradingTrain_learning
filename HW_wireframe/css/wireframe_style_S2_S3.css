@@ -1,0 +1,136 @@
+:root {
+    --S2-mid-bottom-display: flex;
+    --S2-graphic-width: 75%;
+    --S3-display: flex;
+}
+
+@media screen and (min-width:1279px) {}
+
+@media screen and (max-width:1279px) and (min-width:1024px) {}
+
+@media screen and (max-width:1023px) and (min-width:768px) {
+    :root {
+        --S2-mid-bottom-display: none;
+        --S2-graphic-width: 100%;
+        --S3-display: none;
+    }
+
+    .S2:before,
+    .S2 .newspaper {
+        display: none;
+    }
+}
+
+@media screen and (max-width:767px) {
+    :root {
+        --S2-mid-bottom-display: none;
+        --S2-graphic_news-height: 100%;
+        --S2-graphic-width: 100%;
+        --S3-display: none;
+    }
+
+    .S2:before,
+    .S2 .newspaper,
+    .S2 .graphic .context-box__title {
+        display: none;
+    }
+}
+
+/* Section 2 */
+.S2 {
+    width: var(--main-width);
+    height: 455px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.S2:before {
+    background-color:WhiteSmoke;
+    content: "";
+    left: -10vw;
+    width: 110vw;
+    height: 455px;
+    position: absolute;
+    z-index: -1;
+}
+
+.S2 .graphic {
+    width: var(--S2-graphic-width);
+    height: 455px;
+}
+
+.S2 .graphic_news {
+    display: var(--S2-mid-bottom-display);
+    width: 100%;
+    height: calc(100% - 100px);
+}
+
+.S2 .graphic_news_container {
+    width: 45%;
+    height: 100%;
+    margin-top: -15px;
+    margin-left: 20px;
+}
+
+
+
+.S2 .newspaper {
+    width: 25%;
+    height: 455px;
+}
+
+.S2 .newspaper .newspaper_news_img {
+    background-color: rgb(161, 61, 3);
+    height: calc(90% - 100px);
+}
+
+
+/* Section 3 */
+.S3 {
+    width: var(--main-width);
+    height: 410px;
+    display: var(--S3-display);
+    flex-flow: row wrap;
+    margin-bottom: 15px;
+}
+
+.S3 .left {
+    display: var(--S2-mid-bottom-display);
+    width: 75%;
+    height: calc(100% - 100px);
+}
+
+
+.S3 .national_container {
+    width: 45%;
+    height: 100%;
+    margin-left: 20px;
+}
+
+
+.S3 .economic_container {
+    width: 45%;
+    height: 100%;
+    margin-left: 20px;
+}
+
+
+.S3_header {
+    border: 1px solid #cb2528;
+    border-radius: 4px;
+    color: #cb2528;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 4px 16px;
+    vertical-align: top;
+}
+
+.S3 .right {
+    width: 25%;
+    height: 310px;
+}
+
+.S3 .right a {
+    margin-top: 15px;
+}

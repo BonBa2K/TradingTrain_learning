@@ -1,5 +1,5 @@
 const logoData = {
-    src: './data/tech punk.png',
+    src: './data/img/tech punk.png',
     text: 'bla bla bla bla bla bla bla bla bla bla bla bla bla',
     href: "https://youtu.be/dQw4w9WgXcQ",
 }
@@ -56,12 +56,12 @@ const menuList = [
 ]
 
 const promotionData = {
-    src: './data/lending.png',
+    src: './data/img/lending.png',
     href: "https://youtu.be/dQw4w9WgXcQ",
 }
 
 const coverMidTopImageData = {
-    src: './data/photo1.png',
+    src: './data/img/photo1.png',
     text: 'bla bla bla bla bla bla bla bla bla bla bla bla bla',
     href: "https://youtu.be/dQw4w9WgXcQ",
 }
@@ -72,7 +72,7 @@ const coverMidTopTextData = {
 }
 
 const coverLeftData = {
-    src: './data/bird.jpg',
+    src: './data/img/bird.jpg',
     title: 'bla bla bla bla bla bla bla bla bla bla bla bla bla',
     href: "https://youtu.be/dQw4w9WgXcQ",
 }
@@ -110,14 +110,14 @@ const coverRightOtherTitleList = [
 ]
 
 const editorNewsData = {
-    src: './data/author.png',
+    src: './data/img/author.png',
     title: '在非洲每60秒就會過去1分鐘 ',
     href: "https://youtu.be/dQw4w9WgXcQ",
     text: '紅紅 杜家紅玫瑰鸚鵡',
     text_href: "https://youtu.be/dQw4w9WgXcQ",
 }
 const coverMidBottomData = {
-    src: './data/yorushika.png',
+    src: './data/img/birdbirds.jpg',
     title: 'ヨルシカ - 思想犯',
     href: "https://youtu.be/dQw4w9WgXcQ",
     text: '我是一位小偷。從古至今，有各式各樣的小偷存在，但我和他們有些許不同。我不是為了錢而偷竊。對於古董珠寶和其他有價值的藝術品，也沒有興趣。我啊，是位盜竊聲音的小偷。',
