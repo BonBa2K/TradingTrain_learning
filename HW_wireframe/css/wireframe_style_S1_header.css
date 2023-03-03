@@ -2,8 +2,8 @@
     --main-width: 1280px;
     --all-margin-top: 48px;
     --menu_1-display: flex;
+    --menu_1-width: 60%;
     --menu_2-display: none;
-    --logo-width: 15%;
     --subscribe-width: 25%;
     --S1-mid-bottom-display: flex;
     --S1-mid-width: 50%;
@@ -54,7 +54,7 @@
         --S1-right-width: 552px;
         --S1-mid-top-height: 100%;
         --S1-right-newspaper-display: block;
-        --S1-right-other-display: none;
+        --S1-right-other-display: block;
         --S1-left-display: none;
         --S1-mid-bottom-display: none;
         --S1-right-editor-margin-left: 0%;
@@ -69,7 +69,6 @@
     }
 
     .cover_right_newspaper {
-        background-color: rgb(27, 60, 193);
         width: 184px;
         height: 354.9px;
     }
@@ -82,7 +81,6 @@
         max-width: 100%;
         --menu_1-display: none;
         --menu_2-display: flex;
-        --logo-width: 70%;
         --subscribe-width: 30%;
         --all-margin-top: 0px;
         --S1-flex-flow: row wrap;
@@ -129,8 +127,17 @@ body {
     /* background: var(--background-color); */
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none
+}
+
 .promotion {
-    background-color: rgb(7, 235, 252);
+    background-color: dimgray;
     width: 100%;
     height: 80px;
     display: flex;
@@ -168,7 +175,7 @@ body {
 }
 
 .all_header .logo {
-    width: var(--logo-width);
+    height: 100%;
     display: flex;
     align-items: center;
 }
@@ -180,7 +187,7 @@ body {
 
 .all_header .menu {
     display: var(--menu_1-display);
-    width: 60%;
+    width: var(--menu_1-width);
     justify-content: space-between;
     align-items: center;
 }
@@ -192,6 +199,8 @@ body {
 
 /* context-box__title */
 .context-box__title {
+    margin-top: 5%;
+    display: block;
     color: rgb(70, 70, 70);
     font-size: 30px;
     line-height: 40px;
@@ -205,10 +214,24 @@ body {
     color: white;
 }
 
+/* top_title */
+.top_title {
+    width: 95%;
+    font-size: 40px;
+    font-weight: 900;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 /* big_title */
 .big_title {
     width: 95%;
-    font-size: 40px;
+    font-size: 24px;
     font-weight: 900;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -223,15 +246,27 @@ body {
 .medium_title {
     display: -webkit-box;
     width: 100%;
-    font-size: 25px;
+    font-size: 18px;
     font-weight: 900;
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     margin-bottom: 10px;
-
 }
+
+/* little_title */
+/* .little_title {
+    display: -webkit-box;
+    width: 100%;
+    font-size: 25px;
+    font-weight: 900;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    margin-bottom: 10px;
+
+} */
 
 /* Section 1 */
 .S1 {
@@ -253,7 +288,8 @@ body {
 .relative_title {
     width: 95%;
     position: relative;
-    bottom: 30%;
+    bottom: 120px;
+    height: 120px;
     font-size: 50px;
     font-weight: 900;
     line-height: 1.15;
@@ -263,7 +299,10 @@ body {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+    color: white;
+    background-image: linear-gradient(180deg, rgba(196, 196, 196, 0), rgba(69, 69, 69, .583) 31.77%, #000)
 }
+
 
 .S1 .mid {
     width: var(--S1-mid-width);
@@ -336,7 +375,6 @@ body {
 
 .S1 .cover_right_newspaper {
     display: var(--S1-right-newspaper-display);
-    background-color: rgb(27, 60, 193);
     width: 184px;
     height: var(--S1-right-height);
 }

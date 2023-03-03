@@ -2,19 +2,23 @@
     --S6-text-display: -webkit-box;
     --S6-image-width: 40%;
     --S6-image-margin-top: -50px;
+    --S6-context-height: 100%;
+    --S6-height: 545px;
 }
 
 @media screen and (min-width:1279px) {}
 
 @media screen and (max-width:1279px) and (min-width:1024px) {
     :root {
-        --S6-image-width: 20%
+        --S6-image-width: 20%;
+        --S6-height: 478px;
     }
 }
 
 
 @media screen and (max-width:1023px) and (min-width:768px) {
     :root {
+        --S6-height: 421px;
         --S7-title-width: 100%;
         --S7-title-height: 53px;
         --S7-flex-flow: row wrap;
@@ -60,7 +64,7 @@
 /* Section 6 */
 .S6 {
     width: var(--main-width);
-    height: 545px;
+    height: var(--S6-height);
     display: flex;
     flex-flow: row wrap;
     margin-top: var(--all-margin-top);
@@ -71,7 +75,7 @@
     content: "";
     left: -10vw;
     width: 110vw;
-    height: 545px;
+    height: var(--S6-height);
     position: absolute;
     z-index: -1;
 }
@@ -79,15 +83,14 @@
 .S6 .context {
     display: flex;
     flex-flow: row nowrap;
-    width: 100%;
     height: calc(100% - 170px);
 }
 
 .S6 .S6_text_area {
     display: flex;
     background-color: white;
-    width: 100%;
-    height: auto;
+    width: 60%;
+    height: var(--S6-context-height);
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -102,7 +105,7 @@
 
 .S6 .S6_image {
     width: var(--S6-image-width);
-    height: 375px;
+    height: var(--S6-context-height);
     margin-top: var(--S6-image-margin-top);
 }
 

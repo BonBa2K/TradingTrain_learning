@@ -1,4 +1,5 @@
 :root {
+    --S4-height: 545px;
     --S5-height: 220px;
     --S5-comment-width: 25%;
     --S5-comment-height: 120px;
@@ -6,10 +7,15 @@
 
 @media screen and (min-width:1279px) {}
 
-@media screen and (max-width:1279px) and (min-width:1024px) {}
+@media screen and (max-width:1279px) and (min-width:1024px) {
+    :root {
+        --S4-height: 500px;
+    }
+}
 
 @media screen and (max-width:1023px) and (min-width:768px) {
     :root {
+        --S4-height: 500px;
         --S5-height: 330px;
         --S5-comment-width: 50%;
         --S5-comment-height: 120px;
@@ -19,7 +25,8 @@
 
 @media screen and (max-width:767px) {
     :root {
-        --S5-height: 560px;
+        --S4-height: 500px;
+        --S5-height: 330px;
         --S5-comment-width: 100%;
         --S5-comment-height: 117px;
     }
@@ -30,7 +37,7 @@
 /* Section 4 */
 .S4 {
     width: var(--main-width);
-    height: 545px;
+    height: var(--S4-height);
     display: flex;
     flex-flow: row wrap;
     margin-top: var(--all-margin-top);
@@ -41,22 +48,22 @@
     content: "";
     left: -10vw;
     width: 110vw;
-    height: 545px;
+    height: var(--S4-height);
     position: absolute;
     z-index: -1;
 }
 
 .S4 .reader {
-    width: 50%;
+    width: 48%;
     height: 405px;
+    margin-left: 2%;
 }
 
 .S4 .S4_article_container {
-    width: 50%;
+    width: 48%;
     height: 100%;
+    margin-left: 4%;
 }
-
-
 
 
 .S4_header {

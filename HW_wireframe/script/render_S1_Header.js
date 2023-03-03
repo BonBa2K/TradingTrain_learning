@@ -55,3 +55,5 @@ coverRightEditorNewsContainer[0].appendChild(author_img_aElement);
 
 // update cover_right_other_title List
 update_other_titles('cover_right_other_title', coverRightOtherTitleList);
+
+update_El_a_Img('cover_right_newspaper_news', newspaperNewsData);

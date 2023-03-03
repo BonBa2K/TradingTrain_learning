@@ -1,7 +1,7 @@
 
 const graphicNewsData = {
     src: './data/img/BB.jpg',
-    title: 'ヨルシカ - 思想犯',
+    title: 'ヨルシカ - 思想犯 n4j3xu.l4 ヨルシカ - 思想犯',
     href: "https://youtu.be/dQw4w9WgXcQ",
     text: '我是一位小偷。從古至今，有各式各樣的小偷存在，但我和他們有些許不同。我不是為了錢而偷竊。對於古董珠寶和其他有價值的藝術品，也沒有興趣。我啊，是位盜竊聲音的小偷。',
     text_href: "https://youtu.be/dQw4w9WgXcQ",
