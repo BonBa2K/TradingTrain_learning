@@ -1,36 +1,133 @@
 :root {
-    --S4-height: 545px;
+    --S4-height: 450px;
+    --S4-author-width: 28%;
+    --S4-reader-image-width:50%;
+    --S4-reader-text-width:100%;
     --S5-height: 220px;
     --S5-comment-width: 25%;
     --S5-comment-height: 120px;
 }
 
-@media screen and (min-width:1279px) {}
+@media screen and (min-width:1279px) {
+    .S4 .reader_text {
+    justify-content: center;
+    }
+    .comment_author{
+    text-align: center;
+    }
+    .S5 .comment {
+            flex-flow: row wrap;
+    }
+    
+    .comment_image{
+        width: 28%;
+    }
+    
+    .S5 .comment_text {
+        width: calc(96% - 110px);
+        margin-left: 4%;
+    }
+}
 
 @media screen and (max-width:1279px) and (min-width:1024px) {
     :root {
-        --S4-height: 500px;
+        --S4-height: 380px;
+    }
+    .S4 .reader_text {
+        justify-content: center;
+    }
+    .comment_author{
+        text-align: center;
+    }
+    .S5 .comment {
+            flex-flow: row wrap;
+    }
+    
+    .comment_image{
+        width: 28%;
+    }
+    
+    .S5 .comment_text {
+        width: calc(96% - 110px);
+        margin-left: 4%;
     }
 }
 
 @media screen and (max-width:1023px) and (min-width:768px) {
     :root {
         --S4-height: 500px;
+        --S4-author-width: 100%;
+        --S4-reader-image-width:30%;
+        --S4-reader-text-width:70%;
         --S5-height: 330px;
         --S5-comment-width: 50%;
         --S5-comment-height: 120px;
     }
-
+    
+    .S4 .reader {
+        flex-direction: column;
+    }
+    .author{
+        display: flex;
+        margin-bottom: 20px;
+    }
+    .reader_right .article{
+        margin-bottom: 20px;
+    }
+    .comment_author{
+        text-align: left;
+    }
+    .S4 .reader_text {
+        margin-left: 10px;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    .S5 .comment {
+            flex-flow: row wrap;
+    }
+    
+    .comment_image{
+        width: 28%;
+    }
+    
+    .S5 .comment_text {
+        width: calc(96% - 110px);
+        margin-left: 4%;
+    }
 }
 
 @media screen and (max-width:767px) {
     :root {
-        --S4-height: 500px;
-        --S5-height: 330px;
+        --S4-height: 480px;
+        --S4-author-width: 100%;
+        --S5-height: 510px;
         --S5-comment-width: 100%;
         --S5-comment-height: 117px;
     }
 
+    .S4 .reader {
+        flex-direction: column;
+    }
+    .author{
+        display: flex;
+        margin-bottom: 20px;
+    }
+    .reader_right .article{
+        display: flex;
+        margin-left: 1%;
+        flex-direction: row-reverse;
+    }
+    .S5 .comment {
+            flex-flow: row-reverse wrap;
+    }
+    
+    .S5 .comment_image{
+        width: 110px;
+    }
+
+    .S5 .comment_text {
+        width: calc(99% - 110px);
+    }
 }
 
 
@@ -54,9 +151,21 @@
 }
 
 .S4 .reader {
-    width: 48%;
-    height: 405px;
-    margin-left: 2%;
+    display: flex;
+    width: calc(50% - 8px);
+    margin-left: 8px;
+}
+.S4 .reader_text{
+    width: var(--S4-reader-text-width);
+    display: flex;
+    flex-wrap: wrap;
+}
+.S4 .reader_image{
+    width: var(--S4-reader-image-width);
+}
+.S4 .author {
+    width: var(--S4-author-width);
+    margin-left: 10px;
 }
 
 .S4 .S4_article_container {
@@ -80,7 +189,6 @@
 /* Section 5 */
 .S5 {
     width: var(--main-width);
-    height: var(--S5-height);
     display: flex;
     flex-flow: row wrap;
     margin-top: 0px;
@@ -90,7 +198,6 @@
     width: var(--S5-comment-width);
     height: var(--S5-comment-height);
     display: flex;
-    flex-flow: row wrap;
     box-sizing: border-box;
 }
 
@@ -98,5 +205,4 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin-left: 4%;
 }

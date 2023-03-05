@@ -41,11 +41,11 @@ for (const item of document.getElementsByClassName('comment')) {
     comment_imageElement.src = commentImageDataList[i].src;
     // comment_author
     comment_authorElement = item.children[1].children[0];
-    comment_authorElement.innerHTML = commentImageDataList[i].title;
-    comment_authorElement.href = commentImageDataList[i].href;
-    // comment_title
-    comment_authorElement = item.children[1].children[1];
     comment_authorElement.innerHTML = commentImageDataList[i].text;
     comment_authorElement.href = commentImageDataList[i].text_href;
+    // comment_title
+    comment_authorElement = item.children[1].children[1];
+    comment_authorElement.innerHTML = commentImageDataList[i].title;
+    comment_authorElement.href = commentImageDataList[i].href;
     i = i + 1;
 }

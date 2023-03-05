@@ -15,12 +15,12 @@ const readerImageDataList = [
         arthorTitle: "死命刷弦吧  就用光速FUZZ  轟鳴出  震天驚雷劃破雲霄",
         article: [
             {
-                articleSrc: './data/img/meow_12.jpg',
+                articleSrc: './data/img/L_meow_12.jpg',
                 articleTitle: '喜歡狹窄陰暗的地方  將臉深深藏進兜帽中 ',
                 articleHref: "https://youtu.be/dQw4w9WgXcQ",
             },
             {
-                articleSrc: './data/img/meow_11.jpg',
+                articleSrc: './data/img/L_meow_11.jpg',
                 articleTitle: '對這無情世界充滿怨恨的眼  無可救藥地渴求著愛',
                 articleHref: "https://youtu.be/dQw4w9WgXcQ",
             }
@@ -33,12 +33,12 @@ const readerImageDataList = [
         arthorTitle: "全力敲打吧  跨越痛楚之後  怎麼辦！  心跳洶湧失控超絕暴動",
         article: [
             {
-                articleSrc: './data/img/meow_10.jpg',
+                articleSrc: './data/img/L_meow_10.jpg',
                 articleTitle: '喜歡被雨淋濕的觸感  和陰沉的表情很搭',
                 articleHref: "https://youtu.be/dQw4w9WgXcQ",
             },
             {
-                articleSrc: './data/img/meow_9.jpg',
+                articleSrc: './data/img/L_meow_9.jpg',
                 articleTitle: '假裝害怕著暴風雨  實則期待天空支離破碎',
                 articleHref: "https://youtu.be/dQw4w9WgXcQ",
             }

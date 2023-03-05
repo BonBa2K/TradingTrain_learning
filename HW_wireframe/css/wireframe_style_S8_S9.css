@@ -1,19 +1,60 @@
 :root {
-    --S8-height: 1053px;
+    --S8-height:900px;
     --S8-newest-width: 50%;
-    --S8-newest-height: 180px;
+    --S8-newest-height: 150px;
     --S9-pod-width: 25%;
     --S9-pod-height: 300px;
 }
 
-@media screen and (min-width:1279px) {}
+@media screen and (min-width:1279px) {
+    .newest_image{
+        width: 40%
+    }
+    
+    .S8 .newest_container {
+        width: 50%;
+    }
+    
+    .S8 .newest_container {
+        margin-left: 5%;
+    }
+    .pod_image
+    {
+        width: 90%;
+    }
+}
 
-@media screen and (max-width:1279px) and (min-width:1024px) {}
+@media screen and (max-width:1279px) and (min-width:1024px) {
+    .newest_image{
+        width: 40%
+    }
+    
+    .S8 .newest_container {
+        width: 50%;
+    }
+    
+    .S8 .newest_container {
+        margin-left: 5%;
+    }
+}
 
 @media screen and (max-width:1023px) and (min-width:768px) {
     :root {
+        --S8-height: 600px;
+        --S8-newest-height: 100px;
         --S9-pod-width: 50%;
-        --S9-pod-height: 628px;
+        --S9-pod-height: 300px;    
+    }
+    .newest_image{
+        width: 40%
+    }
+    
+    .S8 .newest_container {
+        width: 50%;
+    }
+    
+    .S8 .newest_container {
+        margin-left: 5%;
     }
 }
 
@@ -26,7 +67,16 @@
         --S9-pod-height: 25%;
         --S9-pod-width: 100%;
     }
-
+    .S8 .newest {
+        flex-direction: row-reverse;
+    }
+    .newest_image{
+        width: 180px;
+    }
+    
+    .S8 .newest_container {
+        width: calc(100% - 180px);
+    }
 }
 
 /* Section 8 */
@@ -55,30 +105,39 @@
 }
 
 
-.S8 .newest_container {
-    width: 50%;
-    margin-left: 5%;
-}
 
 /* Section 9 */
 .S9 {
     width: var(--main-width);
-    height: var(--S9-height);
     display: flex;
     flex-flow: row wrap;
-    margin-top: var(--all-margin-top);
-    margin-bottom: 70px;
 }
 
 .S9 .pod {
     width: var(--S9-pod-width);
-    height: var(--S9-pod-height);
     display: flex;
     flex-direction: column;
 }
 
 .footer {
+    display: flex;
     height: 252px;
     width: 100%;
-    background-color: black;
+    background-color: rgb(205, 16, 16);
+    justify-content: center;
+}
+.footer .container{
+    width: var(--main-width);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_social{
+    width: 210px;
+    height: 32px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
 }

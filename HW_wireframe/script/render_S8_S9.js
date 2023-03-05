@@ -32,3 +32,9 @@ for (const Ele of podList) {
     pod_titleElement.href = podDataList[i].href;
     i = i + 1;
 }
+
+update_El_a_Img('footer_social_FB', footerSocialList[0]);
+update_El_a_Img('footer_social_IG', footerSocialList[1]);
+update_El_a_Img('footer_social_LINE', footerSocialList[2]);
+update_El_a_Img('footer_social_YT', footerSocialList[3]);
+

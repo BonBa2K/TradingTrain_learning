@@ -2,15 +2,36 @@
     --S2-mid-bottom-display: flex;
     --S2-graphic-width: 75%;
     --S3-display: flex;
+    --S2-width:auto;
 }
 
-@media screen and (min-width:1279px) {}
+@media screen and (min-width:1279px) {
+    .S2 .graphic_news_image img {
+        height: 90%;
+    }
+    .S2 .graphic {
+        height: 455px;
+    }
+    .S2 .graphic_news {
+        height: calc(100% - 100px);
+    }
+}
 
-@media screen and (max-width:1279px) and (min-width:1024px) {}
+@media screen and (max-width:1279px) and (min-width:1024px) {
+    .S2 .graphic_news_image img {
+        height: 90%;
+    }
+    .S2 .graphic {
+    height: 455px;
+    }
+    .S2 .graphic_news {
+        height: calc(100% - 100px);
+    }
+}
 
 @media screen and (max-width:1023px) and (min-width:768px) {
-    :root {
-        --S2-mid-bottom-display: none;
+    :root {    
+        --S2-mid-bottom-display: flex;
         --S2-graphic-width: 100%;
         --S3-display: none;
     }
@@ -19,13 +40,27 @@
     .S2 .newspaper {
         display: none;
     }
+    .S2 .graphic {
+        height: 455px;
+    }
+    .graphic_news_title {
+        font-size: 36px;
+    }
+    .S2 .graphic_news_image img {
+        height: 90%;
+    }
+    .S2 .graphic_news {
+        height: calc(100% - 100px);
+    }
 }
 
 @media screen and (max-width:767px) {
     :root {
-        --S2-mid-bottom-display: none;
+        --S2-mid-bottom-display: block;
         --S2-graphic_news-height: 100%;
         --S2-graphic-width: 100%;
+        --S2-width:500px;
+        --S2-height:900px;
         --S3-display: none;
     }
 
@@ -34,12 +69,17 @@
     .S2 .graphic .context-box__title {
         display: none;
     }
+    .S2 .graphic {
+        height: auto;
+    }
+    .S2 .graphic_news_image img {
+        width: 100%;
+    }
 }
 
 /* Section 2 */
 .S2 {
     width: var(--main-width);
-    height: 455px;
     display: flex;
     flex-flow: row nowrap;
 }
@@ -56,17 +96,13 @@
 
 .S2 .graphic {
     width: var(--S2-graphic-width);
-    height: 455px;
 }
 
 .S2 .graphic_news {
     display: var(--S2-mid-bottom-display);
     width: 100%;
-    height: calc(100% - 100px);
 }
-
 .S2 .graphic_news_container {
-    width: 45%;
     height: 100%;
     margin-top: -15px;
     margin-left: 20px;
