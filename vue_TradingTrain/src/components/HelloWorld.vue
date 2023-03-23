@@ -3,20 +3,19 @@ export default {
   inject: ['phantom'],
   data() {
     return {
-      publicWalletAddress: "",
-      phantom: this.phantom,
+      publicWalletAddress: ''
     }
   },
   methods: {
-    connectPhantom: async () => {
-      var phantom_de;
+    connectPhantom: async function ()  {
+      var vm = this;
       if (phantom) {
-        (phantom_de = phantom.solana);
-        console.log('phantom_de', phantom_de);
-        const response = await phantom_de.connect();
+        console.log('phantom_de', phantom.solana);
+        const response = await phantom.solana.connect();
         console.log('Connected with Public Key:', response.publicKey.toString())
-        this.publicWalletAddress = response.publicKey.toString();
+        vm.publicWalletAddress = response.publicKey.toString();
       }
+      console.log('this.publicWalletAddress = ', this.publicWalletAddress);
     }
   }
 }
@@ -24,20 +23,20 @@ export default {
 
 <template>
   <div id="main-container">
-    <template v-if="phantom && !publicWalletAddress">
+    <template v-if="phantom && publicWalletAddress==''">
       <button class="btn-mg" @click="connectPhantom">
         CONNECT WALLET
       </button>
     </template>
 
-    <template v-if="publicWalletAddress">
+    <template v-if="publicWalletAddress!=''">
       <div>
         <p class="text-white-mg">
           Welcome to the Solana network, <br />
           <strong>{{ publicWalletAddress }}</strong>
         </p>
         <div>
-          <img src="static/images/welcome.gif" alt="welcome gif" />
+          <img src="../assets/welcome.gif" alt="welcome gif" />
         </div>
       </div>
     </template>
