@@ -1,20 +1,58 @@
-<script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true
+<script>
+export default {
+  inject: ['phantom'],
+  data() {
+    return {
+      publicWalletAddress: "",
+      phantom: this.phantom,
+    }
+  },
+  methods: {
+    connectPhantom: async () => {
+      var phantom_de;
+      if (phantom) {
+        (phantom_de = phantom.solana);
+        console.log('phantom_de', phantom_de);
+        const response = await phantom_de.connect();
+        console.log('Connected with Public Key:', response.publicKey.toString())
+        this.publicWalletAddress = response.publicKey.toString();
+      }
+    }
   }
-})
+}
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
-    </h3>
+  <div id="main-container">
+    <template v-if="phantom && !publicWalletAddress">
+      <button class="btn-mg" @click="connectPhantom">
+        CONNECT WALLET
+      </button>
+    </template>
+
+    <template v-if="publicWalletAddress">
+      <div>
+        <p class="text-white-mg">
+          Welcome to the Solana network, <br />
+          <strong>{{ publicWalletAddress }}</strong>
+        </p>
+        <div>
+          <img src="static/images/welcome.gif" alt="welcome gif" />
+        </div>
+      </div>
+    </template>
+
+    <template v-if="phantom === null">
+      <div class="no-phantom-wallet-container">
+        <div>
+          <div class="lds-dual-ring"></div>
+          <p>Checking ...</p>
+        </div>
+        <a href="https://phantom.app/" target="_blank">
+          You don't have a Phantom wallet ! Get one there !
+        </a>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -35,6 +73,7 @@ h3 {
 }
 
 @media (min-width: 1024px) {
+
   .greetings h1,
   .greetings h3 {
     text-align: left;

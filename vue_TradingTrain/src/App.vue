@@ -1,20 +1,27 @@
 <script>
+import HelloWorld from './components/HelloWorld.vue'
+const { solana } = window;
+var phantom_input;
+
+if (solana?.isPhantom) {
+  phantom_input = solana;
+}
+else {
+  phantom_input = null;
+}
+
 export default {
-  data() {
-    return {
-      awesome: true
-    }
+  components: {
+    HelloWorld,
   },
-  methods: {
-    toggle() {
-      this.awesome = !this.awesome
+  provide() {
+    return {
+      phantom: phantom_input
     }
   }
 }
 </script>
 
 <template>
-  <button @click="toggle">toggle</button>
-  <h1 v-if="awesome">Vue is awesome!</h1>
-  <h1 v-else>Oh no 😢</h1>
+  <HelloWorld />
 </template>
