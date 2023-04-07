@@ -1,5 +1,5 @@
 <script>
-import HelloWorld from './components/phantom_connect.vue'
+import phantom_connect from './components/phantom_connect.vue'
 // Destructuring the data named solana from window
 const { solana: solanaData } = window;
 var phantom_input;
@@ -14,14 +14,14 @@ else {
 }
 
 export default {
-  
-// import components
+
+  // import components
   components: {
-    HelloWorld,
+    phantom_connect,
   },
 
-// provide data to grand child
-// use inject to access
+  // provide data to grand child
+  // use inject to access
   provide() {
     return {
       walletData: phantom_input
@@ -31,5 +31,5 @@ export default {
 </script>
 
 <template>
-  <HelloWorld />
+  <phantom_connect />
 </template>

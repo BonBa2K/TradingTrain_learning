@@ -52,7 +52,7 @@ export default {
         Welcome to the Solana network, <br />
         <strong>{{ publicWalletAddress }}</strong>
       </p>
-      <div>
+      <div class="success_img">
         <img src="../assets/welcome.gif" />
       </div>
       <button class="btn-mg" @click="disconnectPhantom">
@@ -74,5 +74,13 @@ export default {
 <style scoped>
 body {
   background-color: rgba(31, 41, 55, 1);
+}
+
+.success_img {
+  width: 90%;
+}
+
+.success_img img {
+  width: 90%;
 }
 </style>
