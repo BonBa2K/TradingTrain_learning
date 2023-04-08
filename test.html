@@ -1,44 +1,232 @@
 <html>
+
 <head>
 </head>
+
 <body>
-    <div id="container" style="width: 600px;"></div>
-    <script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js">
-        const data = {
-            "18-24歲": 12,
-            "25-29歲": 18,
-            "30-34歲": 22,
-            "35-39歲": 25,
-            "40-44歲": 32,
-            "45-49歲": 35,
-            "50-54歲": 26,
-            "55歲+": 18
-        }
 
-        const container = document.getElementById("container");
-        const xAxisCate = Object.keys(data);
-        const seriesData = xAxisCate.map(key => data[key]);
+    <div id="container" style="width:100%; height:400px;"></div>
 
-        var myChart = Highcharts.chart(container, {
-            chart: {
-                type: "column"
-            },
-            title: {
-                text: "公司員工年齡分佈",
-            },
-            xAxis: {
-                categories: xAxisCate
-            },
-            yAxis: {
+    <p class="highcharts-description">
+        Basic line chart showing trends in a dataset. This chart includes the
+        <code>series-label</code> module, which adds a label to each line for
+        enhanced readability.
+    </p>
+
+
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+
+    <script>
+        // // Basic line Example
+        // const chart = Highcharts.chart('container', {
+        // chart: {
+        //     type: 'bar'
+        // },
+        // title: {
+        //     text: 'Fruit Consumption'
+        // },
+        // xAxis: {
+        //     categories: ['Apples', 'Bananas', 'Oranges']
+        // },
+        // yAxis: {
+        //     title: {
+        //         text: 'Fruit eaten'
+        //     }
+        // },
+        // series: [{
+        //     name: 'Jane',
+        //     data: [1, 0, 4]
+        // }, {
+        //     name: 'John',
+        //     data: [5, 7, 3]
+        // }]
+        // });
+
+        // // Column and bar charts Example
+        // Highcharts.chart('container', {
+        //     chart: {
+        //         type: 'column'
+        //     },
+        //     title: {
+        //         align: 'left',
+        //         text: 'Browser market shares. January, 2022'
+        //     },
+        //     accessibility: {
+        //         announceNewData: {
+        //             enabled: true
+        //         }
+        //     },
+        //     xAxis: {
+        //         type: 'category'
+        //     },
+        //     yAxis: {
+        //         title: {
+        //             text: 'Total percent market share'
+        //         }
+
+        //     },
+        //     legend: {
+        //         enabled: false
+        //     },
+        //     plotOptions: {
+        //         series: {
+        //             borderWidth: 0,
+        //             dataLabels: {
+        //                 enabled: true,
+        //                 format: '{point.y:.1f}%'
+        //             }
+        //         }
+        //     },
+        //     tooltip: {
+        //         headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+        //         pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+        //     },
+        //     series: [
+        //         {
+        //             name: 'Browsers',
+        //             colorByPoint: true,
+        //             data: [
+        //                 {
+        //                     name: 'Chrome',
+        //                     y: 63.06,
+        //                     drilldown: 'Chrome'
+        //                 },
+        //                 {
+        //                     name: 'Safari',
+        //                     y: 19.84,
+        //                     drilldown: 'Safari'
+        //                 },
+        //                 {
+        //                     name: 'Firefox',
+        //                     y: 4.18,
+        //                     drilldown: 'Firefox'
+        //                 },
+        //                 {
+        //                     name: 'Edge',
+        //                     y: 4.12,
+        //                     drilldown: 'Edge'
+        //                 },
+        //                 {
+        //                     name: 'Opera',
+        //                     y: 2.33,
+        //                     drilldown: 'Opera'
+        //                 },
+        //                 {
+        //                     name: 'Internet Explorer',
+        //                     y: 0.45,
+        //                     drilldown: 'Internet Explorer'
+        //                 },
+        //                 {
+        //                     name: 'Other',
+        //                     y: 1.582,
+        //                     drilldown: null
+        //                 }
+        //             ]
+        //         }
+        //     ],
+        // });
+
+        // // Pie chart Example
+        // Highcharts.chart('container', {
+        //     chart: {
+        //         plotBackgroundColor: null,
+        //         plotBorderWidth: null,
+        //         plotShadow: false,
+        //         type: 'pie'
+        //     },
+        //     title: {
+        //         text: 'Browser market shares in May, 2020',
+        //         align: 'left'
+        //     },
+        //     tooltip: {
+        //         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        //     },
+        //     accessibility: {
+        //         point: {
+        //             valueSuffix: '%'
+        //         }
+        //     },
+        //     plotOptions: {
+        //         pie: {
+        //             allowPointSelect: true,
+        //             cursor: 'pointer',
+        //             dataLabels: {
+        //                 enabled: true,
+        //                 format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+        //             }
+        //         }
+        //     },
+        //     series: [{
+        //         name: 'Brands',
+        //         colorByPoint: true,
+        //         data: [{
+        //             name: 'Chrome',
+        //             y: 70.67,
+        //             sliced: true,
+        //             selected: true
+        //         }, {
+        //             name: 'Edge',
+        //             y: 14.77
+        //         }, {
+        //             name: 'Firefox',
+        //             y: 4.86
+        //         }, {
+        //             name: 'Safari',
+        //             y: 2.63
+        //         }, {
+        //             name: 'Internet Explorer',
+        //             y: 1.53
+        //         }, {
+        //             name: 'Opera',
+        //             y: 1.40
+        //         }, {
+        //             name: 'Sogou Explorer',
+        //             y: 0.84
+        //         }, {
+        //             name: 'QQ',
+        //             y: 0.51
+        //         }, {
+        //             name: 'Other',
+        //             y: 2.6
+        //         }]
+        //     }]
+        // });
+
+        Highcharts.getJSON('https://demo-live-data.highcharts.com/aapl-ohlc.json', function (data) {
+            // create the chart
+            Highcharts.stockChart('container', {
+                rangeSelector: {
+                    selected: 1
+                },
+
                 title: {
-                    text: "人數"
-                }
-            },
-            series: [{
-                name: "XX公司員工",
-                data: seriesData
-            }]
+                    text: 'AAPL Stock Price'
+                },
+
+                series: [{
+                    type: 'candlestick', // candlestick function
+                    name: 'AAPL Stock Price',
+                    data: data,
+                    dataGrouping: {
+                        units: [
+                            [
+                                'week', // unit name
+                                [1] // allowed multiples
+                            ], [
+                                'month',
+                                [1, 2, 3, 4, 6]
+                            ]
+                        ]
+                    }
+                }]
+            });
         });
+
     </script>
 </body>
 
